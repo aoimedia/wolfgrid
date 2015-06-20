@@ -1,0 +1,68 @@
+/*!
+ * Wolfgrid
+ * An easy-to-use lightweight responsive mobile-first nestable grid
+ * system without floats
+ * Version: 1.0.0
+ * Grab it: https://github.com/schoenewolf/wolfgrid
+ * Demo:    http://schoenewolf.com/wolfgrid
+ */
+
+$col-padding: 1.5em;
+$grid-total-columns: 12;
+
+.grid {
+    margin: 0 (($col-padding / 2) * -1);
+}
+
+.col {
+    display: inline-block;
+    padding: 0 ($col-padding / 2);
+    width: 100%;
+    vertical-align: top;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.col--fit {
+    width: auto;
+}
+
+/**
+ * Small screens only
+ */
+@media (max-width: 549px) {
+
+    @for $i from 1 through $grid-total-columns {
+        .col-sm--#{$i} {
+            width: (100% / $grid-total-columns * $i);
+        }
+    }
+
+}
+
+/**
+ * Standard medium screens and above
+ */
+@media (min-width: 550px) {
+
+    @for $i from 1 through $grid-total-columns {
+        .col--#{$i} {
+            width: (100% / $grid-total-columns * $i);
+        }
+    }
+
+}
+
+/**
+ * Medium screens only
+ */
+@media (min-width: 550px) and (max-width: 749px) {
+
+    @for $i from 1 through $grid-total-columns {
+        .col-md--#{$i} {
+            width: (100% / $grid-total-columns * $i);
+        }
+    }
+
+}
